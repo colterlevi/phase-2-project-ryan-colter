@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Titles from './Titles.json'
 import './App.css'
 
 const App = () => {
@@ -23,7 +24,6 @@ const App = () => {
           return <p >{q.question}</p>
         })
         }
-
       </div>
     )
   }
