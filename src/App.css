@@ -1,0 +1,17 @@
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: bisque;
+  color: #000;
+}
+
+nav {
+  float: right;
+  align-content: flex-end;
+  
+}
