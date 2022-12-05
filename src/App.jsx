@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom"
 
 const App = () => {
   const [questions, setQuestions] = useState([])
