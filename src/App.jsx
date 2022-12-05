@@ -10,11 +10,22 @@ import {
   RouterProvider,
   useNavigate
 } from "react-router-dom"
+import { slide as Menu } from 'react-burger-menu'
 
 
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [category, setCategory] = useState("history")
+  const navigate = useNavigate()
+  
+  const HamburgerMenu = () => {
+    return (
+      <Menu>
+        <li>home</li>
+        <li>login</li>
+      </Menu>
+    );
+  }
   
   useEffect(() => {
     const request = async () => {
@@ -55,6 +66,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <HamburgerMenu />
       <RouterProvider router={router} />
     </div>
   )
