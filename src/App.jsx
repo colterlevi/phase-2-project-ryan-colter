@@ -2,18 +2,19 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Login from './components/Login'
+import Leaderboard from './components/Leaderboard'
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
+  useNavigate
 } from "react-router-dom"
 
 
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [category, setCategory] = useState("history")
- 
   
   useEffect(() => {
     const request = async () => {
@@ -39,11 +40,15 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Questions category={category}/>,
+      element: <Questions />,
     },
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/leaderboard",
+      element: <Leaderboard />,
     },
   ]);
 

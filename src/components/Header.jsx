@@ -4,8 +4,8 @@ import { slide as Menu } from 'react-burger-menu'
 const HamburgerMenu = () => {
     return (
         <Menu>
-            <p>login</p><br />
-            <p>leaderboard</p>
+            <li>home</li>
+            <li>login</li>
         </Menu>
     );
 }
@@ -13,10 +13,10 @@ const HamburgerMenu = () => {
 const Header = () => {
     return(
         <div>
-        <HamburgerMenu />
-        <div className="header">
-            <h1 className='page-title'>Trivia Masters</h1>
-        </div>
+            <HamburgerMenu />
+            <div className="header">
+                <h1 className='page-title'>Trivia Masters</h1>
+            </div>
         </div>
     )
 }
