@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom"
+import Login from './components/Login'
+
 
 const App = () => {
   const [questions, setQuestions] = useState([])
@@ -39,6 +35,7 @@ const App = () => {
       <Questions />
       <button onClick={() => { setCategory('music') }}>Music</button>
       {console.log(category)}
+      <Login />
     </div>
   )
 }
