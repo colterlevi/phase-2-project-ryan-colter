@@ -1,34 +1,26 @@
 import { useEffect, useState } from 'react'
 
 const Login = () => {
-    useEffect(() => {
-        loginUser()
-    },[])
-    const loginUser = async (e) => {
+    // useEffect(() => {
+    //     loginUser()
+    // },[])
+    const handleSubmit = async ({form}) => {
+        e.preventDefault()
+        const data = new FormData(form.current)
         let req = await fetch('../users.json', {
-            method: "POST", 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                user: e.user.value,
-                password: e.password.value
-            })
-})
+            method: 'POST',
+            body: data,
+        })
         let res = await req.json()
-        if (req.ok) {
-            console.log(res)
-        } else {
-            alert('nope')
-        }
+        console.log(res)
     }
 
     return(
         <div className='login'>
-            <form>
+            <form ref={form} onSubmit={handleSubmit}>
                 <input id="user" type="text" placeholder='username'></input>
                 <input id="password" type="password" placeholder='password'></input>
-                <button onClick={() => { loginUser() }} type="submit">login</button>
+                <button type="submit">login</button>
             </form>
         </div>
     )
