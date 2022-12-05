@@ -24,7 +24,7 @@ const Login = () => {
     }
 
     return(
-        <div>
+        <div className='login'>
             <form>
                 <input id="user" type="text" placeholder='username'></input>
                 <input id="password" type="password" placeholder='password'></input>
