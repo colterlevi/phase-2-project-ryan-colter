@@ -12,11 +12,11 @@ const HamburgerMenu = () => {
 
 const Header = () => {
     return(
+        <div>
+        <HamburgerMenu />
         <div className="header">
-            <HamburgerMenu />
-            <h1>Trivia Masters</h1>
-            <nav>login</nav>
-            <nav>Search</nav>
+            <h1 className='page-title'>Trivia Masters</h1>
+        </div>
         </div>
     )
 }
