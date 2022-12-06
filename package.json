@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "npx json-server --watch users.json",
     "build": "vite build",
     "preview": "vite preview"
   },

@@ -1,37 +1,36 @@
-import { useEffect, useState } from 'react'
+import { useState } from "react"
 
 const Login = () => {
-    useEffect(() => {
-        loginUser()
-    },[])
-    const loginUser = async (e) => {
-        let req = await fetch('../users.json', {
-            method: "POST", 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                user: e.user.value,
-                password: e.password.value
-            })
-})
-        let res = await req.json()
-        if (req.ok) {
-            console.log(res)
-        } else {
-            alert('nope')
-        }
+
+    const [formData, setFormData] = useState({
+        username: '',
+        password: ''
+    })
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        let req = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+            let res = await fetch.json()
     }
 
-    return(
-        <div>
-            <form>
-                <input id="user" type="text" placeholder='username'></input>
-                <input id="password" type="password" placeholder='password'></input>
-                <button onClick={() => { loginUser() }} type="submit">login</button>
+    function handleChange(e) {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
+
+    return (
+        <div className="login">
+            <form className='login-form' onSubmit={e => handleSubmit(e)}>
+                <h2>Login</h2>
+                <input type='text' placeholder='Username' value={formData.username} name='username' onChange={e => handleChange(e)} ></input>
+                <input type='password' placeholder='Password' value={formData.password} name='password' onChange={e => handleChange(e)} ></input>
+                <button className='login-btn' type='submit'>Login</button>
             </form>
         </div>
     )
 }
 
-export default Login 
+export default Login

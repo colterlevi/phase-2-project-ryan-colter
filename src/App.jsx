@@ -2,12 +2,23 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Login from './components/Login'
+import Register from './components/Register'
+import Leaderboard from './components/Leaderboard'
+import HamburgerMenu from './components/HamburgerMenu'
+import Questions from './components/Questions'
+import Decks from './components/Decks'
+import {
+  Routes,
+  Route,
+  Link,
+  BrowserRouter,
+} from "react-router-dom"
 
 
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [category, setCategory] = useState("history")
-  console.log(category)
+  const [user, setUser] = useState({})
   
   useEffect(() => {
     const request = async () => {
@@ -18,27 +29,18 @@ const App = () => {
     request()
   },[category])
 
-  const Questions = () => {
-    return(
-      <div>
-        {
-        questions.map((q) => {
-          return <p >{q.question}</p>
-        })
-        }
-
-      </div>
-    )
-  }
-
   return (
-    <div className="App">
-      <Header />
-      <Questions />
-      <button onClick={() => { setCategory('music') }}>Music</button>
-      {console.log(category)}
-      <Login />
-    </div>
+      <BrowserRouter>
+        <HamburgerMenu />
+        <Header />      
+        <Routes>
+
+        <Route path="/" element={<Decks category={category} setCategory={setCategory} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+        </Routes>
+      </BrowserRouter>
   )
 }
 

@@ -1,14 +1,31 @@
-import { push as Menu } from 'react-burger-menu'
+import { Link } from "react-router-dom";
+import { slide as Menu } from 'react-burger-menu'
+
+// const StyledLink = styled(Link)`
+//     text-decoration: none;
+
+//     &:focus, &:hover, &:visited, &:link, &:active {
+//         text-decoration: none;
+//     }
+// `;
 
 const HamburgerMenu = () => {
- 
-    // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
     return (
-      <Menu>
-        <p>login</p><br />
-        <p>leaderboard</p>
-      </Menu>
+        <Menu>
+            <Link to="/">
+                <h3>Home</h3>
+            </Link>
+            <Link to="/login">
+                <h3>Login</h3>
+            </Link>
+            <Link to="/register">
+                <h3>Register</h3>
+            </Link>
+            <Link to="/leaderboard">
+                <h3>Leaderboard</h3>
+            </Link>
+        </Menu>
     );
-  }
+}
 
-  export default HamburgerMenu
+export default HamburgerMenu

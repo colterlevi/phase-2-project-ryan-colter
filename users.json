@@ -1,11 +1,34 @@
 {
-    "users":[
+  "users": [
     {
-    "id": 1,
-    "user": "colter",
-    "password": "1234",
-    "score": null
+      "id": 1,
+      "username": "colter",
+      "password": "1234",
+      "score": 69
+    },
+    {
+      "username": "Ryan",
+      "password": "1111",
+      "score": 0,
+      "id": 2
+    },
+    {
+      "username": "Helen",
+      "password": "123456789",
+      "score": 0,
+      "id": 3
     }
-]
-    
+  ],
+  "login": [
+    {
+      "id": 1,
+      "username": "colter",
+      "password": "1234"
+    },
+    {
+      "username": "Ryan",
+      "password": "1111",
+      "id": 3
+    }
+  ]
 }
