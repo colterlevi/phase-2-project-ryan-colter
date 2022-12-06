@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Login = () => {
+const Login = ({ user, setUser }) => {
 
     const [formData, setFormData] = useState({
         username: '',
@@ -14,7 +14,9 @@ const Login = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
-            let res = await fetch.json()
+            let res = await req.json()
+            setUser(formData)
+            console.log(user)
     }
 
     function handleChange(e) {
