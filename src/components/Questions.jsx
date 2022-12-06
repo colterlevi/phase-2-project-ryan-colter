@@ -21,13 +21,13 @@ const Questions = ({ questions, setQuestions }) => {
                         return (
                             <>
                                 <h2>{obj.question}</h2>
-                                <input id='a' type="radio" name='answer' />
+                                <input id='a' type="radio" name={obj.id} />
                                 <label for="a">{AllChoices[0]}</label>
-                                <input id='b' type="radio" name='answer' />
+                                <input id='b' type="radio" name={obj.id} />
                                 <label for="b">{AllChoices[1]}</label>
-                                <input id='c' type="radio" name='answer' />
+                                <input id='c' type="radio" name={obj.id} />
                                 <label for="c">{AllChoices[2]}</label>
-                                <input id='d' type="radio" name='answer' />
+                                <input id='d' type="radio" name={obj.id} />
                                 <label for="d">{AllChoices[3]}</label>
                             </>
                         )
