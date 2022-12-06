@@ -3,7 +3,7 @@ import { useState } from "react"
 const Login = () => {
 
     const [formData, setFormData] = useState({
-        email: '',
+        username: '',
         password: ''
     })
 
@@ -26,7 +26,7 @@ const Login = () => {
             <form className='login-form' onSubmit={e => handleSubmit(e)}>
                 <h2>Login</h2>
                 <input type='text' placeholder='User' value={formData.user} name='user' onChange={e => handleChange(e)} ></input>
-                <input type='text' placeholder='Password' value={formData.password} name='password' onChange={e => handleChange(e)} ></input>
+                <input type='password' placeholder='Password' value={formData.password} name='password' onChange={e => handleChange(e)} ></input>
                 <button className='login-btn' type='submit'>Login</button>
             </form>
         </div>

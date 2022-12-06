@@ -9,7 +9,8 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-  useNavigate
+  useNavigate,
+  Link
 } from "react-router-dom"
 import { slide as Menu } from 'react-burger-menu'
 
@@ -20,11 +21,12 @@ const App = () => {
   const [user, setUser] = useState({})
   // const navigate = useNavigate()
   
-  const HamburgerMenu = () => {
+  const HamburgerMenu = ({router}) => {
     return (
       <Menu>
-        <li>home</li>
-        <li>login</li>
+       <h3>Home</h3>
+       <h3>Login</h3>
+       <h3>Register</h3>
       </Menu>
     );
   }
@@ -40,7 +42,7 @@ const App = () => {
 
   const Questions = () => {
     return(
-      <div>
+      <div className='questions'>
         {
         questions.map((q) => {
           return <p >{q.question}</p>

@@ -13,7 +13,7 @@ const Register = ({ user, setUser }) => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    user: usernameInput,
+                    username: usernameInput,
                     password: passwordInput,
                     score: 0,
                 })
