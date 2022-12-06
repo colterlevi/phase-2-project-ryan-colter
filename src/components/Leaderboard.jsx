@@ -14,12 +14,12 @@ const Leaderboard = () => {
 }, [])
 
     return(
-        <ol>
+        <ol className="leaderboard">
             {
                 leaders.map((user) => {
                    return( 
                    <li>
-                     <h2>{user.user}</h2>
+                     <h2>{user.username}</h2>
                      <p>{user.score}</p>
                    </li>
                    )

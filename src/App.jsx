@@ -5,11 +5,10 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Leaderboard from './components/Leaderboard'
 import {
-  createBrowserRouter,
+  Routes,
   Route,
-  RouterProvider,
-  useNavigate,
   Link,
+  BrowserRouter,
 } from "react-router-dom"
 import { slide as Menu } from 'react-burger-menu'
 
@@ -40,41 +39,37 @@ const App = () => {
       </div>
     )
   }
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Questions />,
-    },
-    {
-      path: "/register",
-      element: <Register setUser={setUser} user={user}/>,
-    },
-    {
-      path: "/login",
-      element: <Login setUser={setUser} user={user}/>,
-    },
-    {
-      path: "/leaderboard",
-      element: <Leaderboard />,
-    },
-  ]);
 
   const HamburgerMenu = () => {
     return (
       <Menu>
+        <Link to="/">
         <h3>Home</h3>
+        </Link>
+        <Link to="/login">
         <h3>Login</h3>
+        </Link>
+        <Link to="/register">
         <h3>Register</h3>
+        </Link>
+        <Link to="/leaderboard">
+        <h3>Leaderboard</h3>
+        </Link>
       </Menu>
     );
   }
 
   return (
-    <div className="App">
-      <Header />
-      <HamburgerMenu />
-      <RouterProvider router={router} />
-    </div>
+      <BrowserRouter>
+        <HamburgerMenu />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Questions />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+        </Routes>
+      </BrowserRouter>
   )
 }
 

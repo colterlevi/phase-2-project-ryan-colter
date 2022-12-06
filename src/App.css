@@ -124,3 +124,11 @@ button {
 button:hover {
   background-color: #c5c5c5;
 }
+
+.leaderboard {
+  text-align: center;
+  justify-content: center;
+  margin: 5rem;
+  border: 5px solid black;
+  border-radius: 3px;
+}
