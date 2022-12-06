@@ -1,4 +1,5 @@
 .header {
+  position: fixed;
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -102,7 +103,17 @@ form {
   padding: 10px;
 }
 
-input {
+.login input {
+  display: block;
+  width: 20rem;
+  height: 2rem;
+  padding: 0.5rem;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.register input {
   display: block;
   width: 20rem;
   height: 2rem;
@@ -131,4 +142,19 @@ button:hover {
   margin: 5rem;
   border: 5px solid black;
   border-radius: 3px;
+}
+
+.decks {
+  display: flex;
+  padding-top: 50px;
+}
+
+.card:hover {
+  background-color: red
+}
+
+.gamecards {
+  display: flex;
+  padding: 25px;
+  width: 30%;
 }
