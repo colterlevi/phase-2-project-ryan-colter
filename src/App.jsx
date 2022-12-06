@@ -6,12 +6,10 @@ import Register from './components/Register'
 import Leaderboard from './components/Leaderboard'
 import {
   createBrowserRouter,
-  createRoutesFromElements,
   Route,
   RouterProvider,
   useNavigate,
   Link,
-  useHref
 } from "react-router-dom"
 import { slide as Menu } from 'react-burger-menu'
 
@@ -20,27 +18,6 @@ const App = () => {
   const [questions, setQuestions] = useState([])
   const [category, setCategory] = useState("history")
   const [user, setUser] = useState({})
-  // const navigate = useNavigate()
-  
-  const HamburgerMenu = () => {
-    useHref(() => {
-    return (
-      <Menu>
-        <nav>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-        </nav>
-      </Menu>
-      );
-    })
-  }
   
   useEffect(() => {
     const request = async () => {
@@ -69,10 +46,6 @@ const App = () => {
       element: <Questions />,
     },
     {
-      path: "/menu",
-      element: <HamburgerMenu />,
-    },
-    {
       path: "/register",
       element: <Register setUser={setUser} user={user}/>,
     },
@@ -85,6 +58,16 @@ const App = () => {
       element: <Leaderboard />,
     },
   ]);
+
+  const HamburgerMenu = () => {
+    return (
+      <Menu>
+        <h3>Home</h3>
+        <h3>Login</h3>
+        <h3>Register</h3>
+      </Menu>
+    );
+  }
 
   return (
     <div className="App">
