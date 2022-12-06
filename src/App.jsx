@@ -16,7 +16,9 @@ import { slide as Menu } from 'react-burger-menu'
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [category, setCategory] = useState("history")
-  const navigate = useNavigate()
+  const [user, setUser] = useState('')
+  const [password, setPassword] = useState('')
+  // const navigate = useNavigate()
   
   const HamburgerMenu = () => {
     return (
@@ -55,7 +57,7 @@ const App = () => {
     },
     {
       path: "/login",
-      element: <Login />,
+      element: <Login setUser={setUser} user={user} password={password} setPassword={setPassword}/>,
     },
     {
       path: "/leaderboard",

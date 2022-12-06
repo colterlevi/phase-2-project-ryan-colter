@@ -1,25 +1,27 @@
 import { useEffect, useState } from 'react'
 
-const Login = () => {
+const Login = ({ user, setUser, setPassword, password }) => {
     // useEffect(() => {
-    //     loginUser()
+    //     handleSubmit()
     // },[])
-    // const handleSubmit = async ({form}) => {
-    //     e.preventDefault()
-    //     const data = new FormData(form.current)
-    //     let req = await fetch('../users.json', {
-    //         method: 'POST',
-    //         body: data,
-    //     })
-    //     let res = await req.json()
-    //     console.log(res)
-    // }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        let req = await fetch('http://localhost:3000/users', {
+            method: 'POST',
+            body: {
+                    user: user,
+                    password: password
+                  },
+        })
+        let res = await req.json()
+        console.log(user)
+    }
 
     return(
         <div className='login'>
-            <form>
-                <input id="user" type="text" placeholder='username'></input>
-                <input id="password" type="password" placeholder='password'></input>
+            <form onSubmit={handleSubmit}>
+                <input onChange={(e) => { setUser(e.target.value) }} value={user} name="user" type="text" placeholder='username'></input>
+                <input onChange={(e) => { setPassword(e.target.value) }} value={password} name="password" type="password" placeholder='password'></input>
                 <button type="submit">login</button>
             </form>
         </div>
