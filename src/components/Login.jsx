@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const SignUp = ({ user, setUser}) => {
+const Login = ({ user, setUser}) => {
     // useEffect(() => {
     //     handleSubmit()
     // },[])
@@ -55,4 +55,4 @@ const SignUp = ({ user, setUser}) => {
     )
 }
 
-export default SignUp 
+export default Login 

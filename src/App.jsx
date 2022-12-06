@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
-import SignUp from './components/SignUp'
+import Login from './components/Login'
 import Leaderboard from './components/Leaderboard'
 import {
   createBrowserRouter,
@@ -55,8 +55,8 @@ const App = () => {
       element: <Questions />,
     },
     {
-      path: "/signup",
-      element: <SignUp setUser={setUser} user={user}/>,
+      path: "/login",
+      element: <Login setUser={setUser} user={user}/>,
     },
     {
       path: "/leaderboard",
