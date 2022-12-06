@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import Titles from './Titles.json'
+import Questions from './Questions'
+import Decks from './Decks'
 import './App.css'
 
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [category, setCategory] = useState("history")
-  console.log(category)
   
   useEffect(() => {
     const request = async () => {
@@ -16,23 +16,10 @@ const App = () => {
     request()
   },[category])
 
-  const Questions = () => {
-    return(
-      <div>
-        {
-        questions.map((q) => {
-          return <p >{q.question}</p>
-        })
-        }
-      </div>
-    )
-  }
-
   return (
     <div className="App">
-      <Questions />
-      <button onClick={() => { setCategory('music') }}>Music</button>
-      {console.log(category)}
+      {/* <Questions setQuestions={setQuestions} questions={questions} /> */}
+      <Decks category={category} setCategory={setCategory}/>
     </div>
   )
 }
