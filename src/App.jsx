@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
-import Login from './components/Login'
+import SignUp from './components/SignUp'
 import Leaderboard from './components/Leaderboard'
 import {
   createBrowserRouter,
@@ -16,8 +16,7 @@ import { slide as Menu } from 'react-burger-menu'
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [category, setCategory] = useState("history")
-  const [user, setUser] = useState('')
-  const [password, setPassword] = useState('')
+  const [user, setUser] = useState({})
   // const navigate = useNavigate()
   
   const HamburgerMenu = () => {
@@ -56,8 +55,8 @@ const App = () => {
       element: <Questions />,
     },
     {
-      path: "/login",
-      element: <Login setUser={setUser} user={user} password={password} setPassword={setPassword}/>,
+      path: "/signup",
+      element: <SignUp setUser={setUser} user={user}/>,
     },
     {
       path: "/leaderboard",

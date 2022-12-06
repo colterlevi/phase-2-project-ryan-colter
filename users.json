@@ -5,6 +5,12 @@
       "user": "colter",
       "password": "1234",
       "score": 69
+    },
+    {
+      "user": "Ryan",
+      "password": "1111",
+      "score": 0,
+      "id": 2
     }
   ]
 }
