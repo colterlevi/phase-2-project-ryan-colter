@@ -5,6 +5,8 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Leaderboard from './components/Leaderboard'
 import HamburgerMenu from './components/HamburgerMenu'
+import Questions from './components/Questions'
+import Decks from './components/Decks'
 import {
   Routes,
   Route,
@@ -27,25 +29,13 @@ const App = () => {
     request()
   },[category])
 
-  const Questions = () => {
-    return(
-      <div className='questions'>
-        {
-        questions.map((q) => {
-          return <p >{q.question}</p>
-        })
-        }
-        <button onClick={() => { setCategory('music') }}>Music</button>
-      </div>
-    )
-  }
-
   return (
       <BrowserRouter>
         <HamburgerMenu />
-        <Header />
+        <Header />      
         <Routes>
-          <Route path="/" element={<Questions />} />
+
+        <Route path="/" element={<Decks category={category} setCategory={setCategory} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
