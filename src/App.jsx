@@ -34,8 +34,8 @@ const App = () => {
         <HamburgerMenu />
         <Header />      
         <Routes>
-
         <Route path="/" element={<Decks category={category} setCategory={setCategory} />} />
+        <Route path="/game" element={<Questions questions={questions} setQuestions={setQuestions} category={category} setCategory={setCategory} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/leaderboard" element={<Leaderboard />} />

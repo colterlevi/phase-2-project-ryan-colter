@@ -6,7 +6,8 @@ const Questions = ({ questions, setQuestions }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        let req = await fetch('url', { method: 'POST' })
+        console.log("submitted")
+        // let req = await fetch('url', { method: 'PATCH' })
     }
 
     return (
