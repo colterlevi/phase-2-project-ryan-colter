@@ -10,7 +10,8 @@ import {
   Route,
   RouterProvider,
   useNavigate,
-  Link
+  Link,
+  useHref
 } from "react-router-dom"
 import { slide as Menu } from 'react-burger-menu'
 
@@ -21,14 +22,24 @@ const App = () => {
   const [user, setUser] = useState({})
   // const navigate = useNavigate()
   
-  const HamburgerMenu = ({router}) => {
+  const HamburgerMenu = () => {
+    useHref(() => {
     return (
       <Menu>
-       <h3>Home</h3>
-       <h3>Login</h3>
-       <h3>Register</h3>
+        <nav>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+        </nav>
       </Menu>
-    );
+      );
+    })
   }
   
   useEffect(() => {
@@ -56,6 +67,10 @@ const App = () => {
     {
       path: "/",
       element: <Questions />,
+    },
+    {
+      path: "/menu",
+      element: <HamburgerMenu />,
     },
     {
       path: "/register",
