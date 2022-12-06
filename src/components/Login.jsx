@@ -15,7 +15,7 @@ const Login = ({ user, setUser }) => {
             body: JSON.stringify(formData)
         })
             let res = await req.json()
-            setUser(res)
+            setUser(formData)
             console.log(user)
     }
 
