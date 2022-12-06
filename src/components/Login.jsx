@@ -1,58 +1,36 @@
-import { useEffect, useState } from 'react'
+import { useState } from "react"
 
-const Login = ({ user, setUser}) => {
-    // useEffect(() => {
-    //     handleSubmit()
-    // },[])
-    const [usernameInput, setUsernameInput] = useState('')
-    const [passwordInput, setPasswordInput] = useState('')
+const Login = () => {
+
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    })
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-        try {
-            let req = await fetch('http://localhost:3000/users', {
+        let req = await fetch('http://localhost:3000/login', {
             method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                user: usernameInput,
-                password: passwordInput,
-                score: 0,
-            })
-
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
         })
-        let res = await req.json()
-            if (req.ok) {
-                setUsernameInput("");
-                setPasswordInput("");
-            } else {
-                setUsernameInput("Some error occured");
-            }
-        } catch (err) {
-            console.log(err)
-    }
+            let res = await fetch.json()
     }
 
-    return(
-        <div className='login'>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    onChange={(e) => { setUsernameInput(e.target.value) }} 
-                    value={usernameInput} 
-                type="text" 
-                placeholder='username'
-                />
-                <input 
-                    onChange={(e) => { setPasswordInput(e.target.value) }}
-                    value={passwordInput} 
-                type="password" 
-                placeholder='password'
-                />
-                <button type="submit">Register</button>
+    function handleChange(e) {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
+
+    return (
+        <div className="login">
+            <form className='login-form' onSubmit={e => handleSubmit(e)}>
+                <h2>Login</h2>
+                <input type='text' placeholder='User' value={formData.user} name='user' onChange={e => handleChange(e)} ></input>
+                <input type='text' placeholder='Password' value={formData.password} name='password' onChange={e => handleChange(e)} ></input>
+                <button className='login-btn' type='submit'>Login</button>
             </form>
         </div>
     )
 }
 
-export default Login 
+export default Login

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Login from './components/Login'
+import Register from './components/Register'
 import Leaderboard from './components/Leaderboard'
 import {
   createBrowserRouter,
@@ -53,6 +54,10 @@ const App = () => {
     {
       path: "/",
       element: <Questions />,
+    },
+    {
+      path: "/register",
+      element: <Register setUser={setUser} user={user}/>,
     },
     {
       path: "/login",

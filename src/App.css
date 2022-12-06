@@ -75,10 +75,31 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
-.login {
+.login-register {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin: 5rem;
+}
+
+.login {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+  border: 5px solid black;
+  border-radius: 3px;
+}
+.register {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+  border: 5px solid black;
+  border-radius: 3px;
+} 
+
+form {
+  padding: 10px;
 }
 
 input {
