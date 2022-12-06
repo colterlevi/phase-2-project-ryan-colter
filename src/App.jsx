@@ -4,13 +4,13 @@ import Header from './components/Header'
 import Login from './components/Login'
 import Register from './components/Register'
 import Leaderboard from './components/Leaderboard'
+import HamburgerMenu from './components/HamburgerMenu'
 import {
   Routes,
   Route,
   Link,
   BrowserRouter,
 } from "react-router-dom"
-import { slide as Menu } from 'react-burger-menu'
 
 
 const App = () => {
@@ -38,25 +38,6 @@ const App = () => {
         <button onClick={() => { setCategory('music') }}>Music</button>
       </div>
     )
-  }
-
-  const HamburgerMenu = () => {
-    return (
-      <Menu>
-        <Link to="/">
-        <h3>Home</h3>
-        </Link>
-        <Link to="/login">
-        <h3>Login</h3>
-        </Link>
-        <Link to="/register">
-        <h3>Register</h3>
-        </Link>
-        <Link to="/leaderboard">
-        <h3>Leaderboard</h3>
-        </Link>
-      </Menu>
-    );
   }
 
   return (
