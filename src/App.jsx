@@ -18,7 +18,19 @@ import {
 const App = () => {
   const [questions, setQuestions] = useState([])
   const [category, setCategory] = useState("history")
-  const [user, setUser] = useState({})
+  const [users, setUsers] = useState([])
+  const [currentUser, setCurrentUser] = useState([])
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(() => {
+    const request = async () => {
+      let req = await fetch('http://localhost:3000/users')
+      let res = await req.json()
+      setUsers(res)
+    }
+    request()
+  },[setUsers])
+  console.log(loggedIn)
   
   useEffect(() => {
     const request = async () => {
@@ -32,11 +44,11 @@ const App = () => {
   return (
       <BrowserRouter>
         <HamburgerMenu />
-        <Header />      
+        <Header setCurrentUser={setCurrentUser}/>      
         <Routes>
         <Route path="/" element={<Decks category={category} setCategory={setCategory} />} />
         <Route path="/game" element={<Questions questions={questions} setQuestions={setQuestions} category={category} setCategory={setCategory} />} />
-          <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
+          <Route path="/login" element={<Login users={users} setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>

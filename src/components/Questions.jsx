@@ -6,7 +6,7 @@ const Questions = ({ questions, setQuestions }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("submitted")
+        // console.log("submitted")
         // let req = await fetch('url', { method: 'PATCH' })
     }
 
@@ -17,7 +17,7 @@ const Questions = ({ questions, setQuestions }) => {
                     questions.map((obj) => {
                         let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
                         AllChoices.sort(function () { return 0.5 - Math.random() })
-                        console.log(AllChoices)
+                        // console.log(AllChoices)
                         return (
                             <>
                                 <h2>{obj.question}</h2>

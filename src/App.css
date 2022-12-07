@@ -126,6 +126,16 @@ button:hover {
   background-color: #c5c5c5;
 }
 
+.header button {
+  position: fixed;
+  width: fit-content;
+  height: fit-content ;
+  right: 20px;
+  top: 8px;
+  background-color: #373a47;
+  color: whitesmoke;
+}
+
 .leaderboard {
   text-align: center;
   justify-content: center;
@@ -144,8 +154,8 @@ button:hover {
   background-color: #000;
 }
 
-.deck-History image {
-  width: 100%;
+.deck-History a {
+  color: bisque;
 }
 
 .card {
