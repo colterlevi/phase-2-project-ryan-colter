@@ -2,6 +2,7 @@ import { useState } from 'react'
 const Questions = ({ questions, setQuestions }) => {
     const [formPage, setFormPage] = useState('first')
     const [newArr, setNewArr] = useState([])
+    setQuestions 
 
 
     const handleSubmit = async (e) => {
@@ -10,6 +11,15 @@ const Questions = ({ questions, setQuestions }) => {
         // let req = await fetch('url', { method: 'PATCH' })
     }
 
+    
+// questions = [
+//     {
+//         question: 'What is higher than 4',
+//         answers: [
+//             {key: 'A', choice: '4', correct: false},
+//             {key: 'B', choice: '5', correct: true},
+//         ]
+//     }
     return (
         <div>
             <form onSubmit={(e) => { handleSubmit(e) }}>
@@ -29,7 +39,7 @@ const Questions = ({ questions, setQuestions }) => {
                         ]
                         
                         let New = AllChoices.sort(function () { return 0.5 - Math.random() })
-                        
+
                         console.log(New[0])
                         console.log(New.correct)
                         
