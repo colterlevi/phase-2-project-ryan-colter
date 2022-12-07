@@ -152,15 +152,17 @@ button:hover {
 
 .decks {
   display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
   padding-top: 100px;
 }
 
 .deck-History img {
-  width: 100%;
+  width: 90%;
   background-color: #000;
 }
 .deck-Sports img {
-  width: 100%;
+  width: 90%;
   background-color: #000;
 }
 
@@ -169,31 +171,55 @@ button:hover {
 }
 
 .deck-Sports {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   cursor: pointer;
   background-color: crimson;
   padding: .8rem;
   border-radius: .5rem;
+  height: 20rem;
+  width: 100%;
+  min-width: 100%;
 }
 
 .deck-History {
-  cursor: pointer;
-  background-color: navy;
-  padding: .8rem;
-  border-radius: .5rem;
+  align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: navy;
+    padding: .8rem;
+    border-radius: .5rem;
+    height: 20rem;
+    width: 100%;
+    min-width: 100%;
 }
 
 .deck-Music {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   cursor: pointer;
   background-color: peru;
   padding: .8rem;
   border-radius: .5rem;
+  height: 20rem;
+  width: 100%;
+  min-width: 100%;
 }
 
 .deck-Science {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   cursor: pointer;
   background-color: seagreen;
   padding: .8rem;
   border-radius: .5rem;
+  height: 20rem;
+  width: 100%;
+  min-width: 100%;
 }
 
 .gamecards {
