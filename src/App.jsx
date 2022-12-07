@@ -44,7 +44,7 @@ const App = () => {
   return (
       <BrowserRouter>
         <HamburgerMenu />
-        <Header currentUser={currentUser} loggedIn={loggedIn} setCurrentUser={setCurrentUser}/>      
+        <Header currentUser={currentUser} loggedIn={loggedIn} setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>      
         <Routes>
         <Route path="/" element={<Decks category={category} setCategory={setCategory} />} />
         <Route path="/game" element={<Questions questions={questions} setQuestions={setQuestions} category={category} setCategory={setCategory} />} />
