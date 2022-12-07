@@ -1,3 +1,7 @@
+body {
+  background-color: #373a47;
+}
+
 .header {
   position: fixed;
   box-sizing: border-box;
@@ -5,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
-  background-color: bisque;
+  background-color: goldenrod;
   color: #000;
 }
 
@@ -181,6 +185,19 @@ button:hover {
   height: 20rem;
   width: 100%;
   min-width: 100%;
+}
+
+.deck-arts_and_leisure {
+  align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: darkmagenta;
+    padding: .8rem;
+    border-radius: .5rem;
+    height: 20rem;
+    width: 100%;
+    min-width: 100%;
 }
 
 .deck-History {
