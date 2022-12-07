@@ -13,10 +13,8 @@ const Login = ({ users, setCurrentUser, setLoggedIn }) => {
             if (user.username === formData.username && user.password === formData.password) {
                 setCurrentUser(user),
                     setLoggedIn(true)
-                return true
             } else {
                 alert("GO TO SIGN UP")
-                return false
             }
         })
     }

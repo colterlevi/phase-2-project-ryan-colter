@@ -30,7 +30,7 @@ const App = () => {
     }
     request()
   },[setUsers])
-  console.log(loggedIn)
+  console.log(currentUser)  
   
   useEffect(() => {
     const request = async () => {
@@ -44,7 +44,7 @@ const App = () => {
   return (
       <BrowserRouter>
         <HamburgerMenu />
-        <Header setCurrentUser={setCurrentUser}/>      
+        <Header currentUser={currentUser} loggedIn={loggedIn} setCurrentUser={setCurrentUser}/>      
         <Routes>
         <Route path="/" element={<Decks category={category} setCategory={setCategory} />} />
         <Route path="/game" element={<Questions questions={questions} setQuestions={setQuestions} category={category} setCategory={setCategory} />} />

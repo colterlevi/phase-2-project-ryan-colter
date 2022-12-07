@@ -17,6 +17,12 @@
       "password": "123456789",
       "score": 0,
       "id": 3
+    },
+    {
+      "username": "trevor",
+      "password": "2222",
+      "score": 0,
+      "id": 4
     }
   ]
 }

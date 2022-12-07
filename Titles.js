@@ -4,7 +4,7 @@ export const Titles = [
         Title: "Sports & Leisure Deck",
         Category: "Sports",
         Bio: "Interested in Sports? Test your Knowledge!",
-        Images: "url"
+        Images: "src/assets/tim-gouw-VvQSzMJ_h0U-unsplash.jpg"
     },
     {
         id: 2,

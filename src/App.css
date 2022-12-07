@@ -136,6 +136,12 @@ button:hover {
   color: whitesmoke;
 }
 
+.header h3 {
+  position: fixed;
+  left: 100px;
+  top: 25px;
+}
+
 .leaderboard {
   text-align: center;
   justify-content: center;
@@ -146,11 +152,15 @@ button:hover {
 
 .decks {
   display: flex;
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
-.deck-History {
-  width: 100px;
+.deck-History img {
+  width: 100%;
+  background-color: #000;
+}
+.deck-Sports img {
+  width: 100%;
   background-color: #000;
 }
 
@@ -158,9 +168,32 @@ button:hover {
   color: bisque;
 }
 
-.card {
+.deck-Sports {
   cursor: pointer;
-  background-color: #373a47;
+  background-color: crimson;
+  padding: .8rem;
+  border-radius: .5rem;
+}
+
+.deck-History {
+  cursor: pointer;
+  background-color: navy;
+  padding: .8rem;
+  border-radius: .5rem;
+}
+
+.deck-Music {
+  cursor: pointer;
+  background-color: peru;
+  padding: .8rem;
+  border-radius: .5rem;
+}
+
+.deck-Science {
+  cursor: pointer;
+  background-color: seagreen;
+  padding: .8rem;
+  border-radius: .5rem;
 }
 
 .gamecards {
