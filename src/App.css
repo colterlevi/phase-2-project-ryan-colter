@@ -156,87 +156,74 @@ button:hover {
 
 .decks {
   display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  flex-wrap: wrap;
   padding-top: 100px;
+  overflow: hidden;
 }
 
-.deck-History img {
-  width: 90%;
-  background-color: #000;
-}
-.deck-Sports img {
-  width: 90%;
-  background-color: #000;
+.decks div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: .5rem;
+  height: 20rem;
+  width: 400px;
 }
 
-.deck-History a {
+.decks div img {
+  flex-shrink: 0;
+  width: auto;
+  height: 100%;
+  opacity: 50%;
+  z-index: 10;
+}
+
+.decks div h1 {
+  position: absolute;
+  z-index: 999;
+  justify-self: center;
+  align-self: center;
+}
+
+.decks div p {
+  position: fixed;
+  max-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 100;
+  justify-self: center;
+  align-self: center;
+}
+
+.decks div a {
   color: bisque;
 }
 
-.deck-Sports {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
+.deck-Sports {  
   background-color: crimson;
-  padding: .8rem;
-  border-radius: .5rem;
-  height: 20rem;
-  width: 100%;
-  min-width: 100%;
 }
 
 .deck-arts_and_leisure {
-  align-items: center;
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
     background-color: darkmagenta;
-    padding: .8rem;
-    border-radius: .5rem;
-    height: 20rem;
-    width: 100%;
-    min-width: 100%;
 }
 
 .deck-History {
-  align-items: center;
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
+
     background-color: navy;
-    padding: .8rem;
-    border-radius: .5rem;
-    height: 20rem;
-    width: 100%;
-    min-width: 100%;
 }
 
 .deck-Music {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
+ 
   background-color: peru;
-  padding: .8rem;
-  border-radius: .5rem;
-  height: 20rem;
-  width: 100%;
-  min-width: 100%;
+ 
 }
 
 .deck-Science {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
+
   background-color: seagreen;
-  padding: .8rem;
-  border-radius: .5rem;
-  height: 20rem;
-  width: 100%;
-  min-width: 100%;
+ 
 }
 
 .gamecards {

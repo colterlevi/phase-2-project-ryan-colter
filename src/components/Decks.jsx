@@ -15,7 +15,7 @@ const Decks = ({ setCategory, category }) => {
                         <Link className="gamecards" to="/game">
                         <div className={`deck-${deck.Category}`} onClick={() => { setCategory(deck.Category) }}>
                             <h1>{deck.Title}</h1>
-                            <h3>{deck.Bio}</h3>
+                            <p>{deck.Bio}</p>
                             <img src={deck.Images} />
                         </div>
                         </Link>
