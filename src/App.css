@@ -1,5 +1,5 @@
 body {
-  background-color: #373a47;
+  background-color: whitesmoke;
 }
 
 .header {
@@ -126,8 +126,21 @@ button {
   cursor: pointer;
 }
 
+.quiz-btn {
+  border: none;
+  padding: 1rem;
+  width: 21.2rem;
+  font-size: 1.2em;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  background-color: peru
+}
+
 button:hover {
-  background-color: #c5c5c5;
+  background-color: goldenrod
 }
 
 .header button {
@@ -235,4 +248,12 @@ button:hover {
 a {
   color: whitesmoke;
 
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8rem;
+  padding: 10%;
+  margin: auto;
 }

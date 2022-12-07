@@ -11,7 +11,7 @@ const Questions = ({ questions, setQuestions }) => {
     }
 
     return (
-        <div>
+        <div className='quiz'>
             <form onSubmit={(e) => { handleSubmit(e) }}>
                 {
                     questions.map((obj) => {
@@ -33,7 +33,9 @@ const Questions = ({ questions, setQuestions }) => {
                         )
                     })
                 }
-                <input type="submit" />
+                <br />
+                <hr />
+                <input className="quiz-btn" type="submit" />
             </form>
         </div>
     )
