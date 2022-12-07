@@ -139,16 +139,27 @@ button:hover {
   padding-top: 50px;
 }
 
-.card:hover {
-  background-color: red
+.deck-History {
+  width: 100px;
+  background-color: #000;
+}
+
+.deck-History image {
+  width: 100%;
 }
 
 .card {
   cursor: pointer;
+  background-color: #373a47;
 }
 
 .gamecards {
   display: flex;
   padding: 25px;
   width: 30%;
+}
+
+a {
+  color: whitesmoke;
+
 }

@@ -16,7 +16,7 @@ export const Titles = [
     {
         id: 3,
         Title: "Arts & Literature Deck",
-        Category: "Arts & Literature Deck",
+        Category: "Arts & Literature",
         Bio: "Woah there Art major! Bet you wont get this!",
         Images: "url"
     },
@@ -25,7 +25,7 @@ export const Titles = [
         Title: "History Deck",
         Category: "History",
         Bio: "We all fell asleep in History class. How much of it do you really know?",
-        Images: "url"
+        Images: "src/assets/joanna-kosinska-B6yDtYs2IgY-unsplash.jpg"
     },
     {
         id: 5,
