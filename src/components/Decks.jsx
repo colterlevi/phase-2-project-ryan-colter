@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 
 const Decks = ({ setCategory, category }) => {
     const [deck, setDeck] = useState(Titles)
-    console.log(category)
-    console.log(Titles)
     return (
         <div className="decks">
             {
