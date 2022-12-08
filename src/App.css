@@ -1,9 +1,9 @@
 body {
   background-color: whitesmoke;
+  font-family: sans-serif;
 }
 
 .header {
-  position: fixed;
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -24,12 +24,12 @@ body {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: #373A47;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #a90000;
+  background: #A90000;
 }
 
 /* Position and sizing of clickable cross button */
@@ -40,7 +40,7 @@ body {
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: #BDC3C7;
 }
 
 /*
@@ -54,25 +54,42 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: #373A47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #373a47;
+  fill: #373A47;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
+  color: #B8B7AD;
   padding: 0.8em;
+  font-size: 25px;
+}
+
+#img-cont {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+}
+
+.bm-item-list img {
+  width: 60%;
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
+  text-decoration: none;
+}
+
+.bm-item-list a:hover {
+  color: goldenrod;
+  transition: 1s;
 }
 
 /* Styling of overlay */
@@ -161,7 +178,7 @@ button:hover {
   height: fit-content;
   right: 20px;
   top: 8px;
-  background-color: #373a47;
+  background-color: #373A47;
   color: whitesmoke;
 }
 
@@ -182,8 +199,21 @@ button:hover {
 .decks {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding-top: 100px;
   overflow: hidden;
+}
+
+.gamecards :hover {
+  background-color: goldenrod;
+}
+
+.gamecards h1 {
+  background-color: transparent !important;
+}
+
+.gamecards h3 {
+  background-color: transparent !important;
 }
 
 .decks div {
@@ -195,6 +225,7 @@ button:hover {
   border-radius: .5rem;
   height: 20rem;
   width: 400px;
+  transition: 1s;
 }
 
 .decks div img {
@@ -210,6 +241,14 @@ button:hover {
   z-index: 999;
   justify-self: center;
   align-self: center;
+}
+
+.decks div h3 {
+  position: absolute;
+  z-index: 999;
+  font-size: 20px;
+  margin-top: 7%;
+  width: 150px;
 }
 
 .decks div p {
@@ -235,20 +274,15 @@ button:hover {
 }
 
 .deck-History {
-
   background-color: navy;
 }
 
 .deck-Music {
-
   background-color: peru;
-
 }
 
 .deck-Science {
-
   background-color: seagreen;
-
 }
 
 .gamecards {
@@ -259,13 +293,17 @@ button:hover {
 
 a {
   color: whitesmoke;
-
 }
 
 .quiz {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  justify-content: center;
   border-radius: 8rem;
-  padding: 10%;
+  padding: 5% 0;
   margin: auto;
+}
+
+form {
+  font-family: sans-serif;
 }
