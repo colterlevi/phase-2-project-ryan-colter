@@ -17,28 +17,12 @@
       "password": "123456789",
       "score": 0,
       "id": 3
-    }
-  ],
-  "login": [
-    {
-      "id": 1,
-      "username": "colter",
-      "password": "1234"
     },
     {
-      "username": "Ryan",
-      "password": "1111",
-      "id": 3
-    },
-    {
-      "username": "Trevor",
-      "password": "11111",
+      "username": "trevor",
+      "password": "2222",
+      "score": 0,
       "id": 4
-    },
-    {
-      "username": "Shivani",
-      "password": "75757575",
-      "id": 5
     }
   ]
 }
