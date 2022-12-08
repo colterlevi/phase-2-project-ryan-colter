@@ -1,132 +1,87 @@
 import { useState } from 'react'
-const Questions = ({ questions, setQuestions }) => {
+// you need state that tracks score or answers outside of this component
+// ONLY once the trivia game complete do you use a tiny little form element
+// to submit the score or whatever
+
+
+
+const Questions = ({setScore, score,  questions, setQuestions}) => {
     const [formPage, setFormPage] = useState('first')
-    const [newArr, setNewArr] = useState([])
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        console.log("submitted")
-        // let req = await fetch('url', { method: 'PATCH' })
+
+    const handleScoreUpdate = () => {
+        
     }
-
-    //this creates a nested array
-    let Arr = []
-    questions.forEach((obj) => {
-        let BigSet = [
-                            {
-                                question: obj.question,
-                                answers: [{
-                                    key: 'A', answer: obj.incorrectAnswers[0], correct: false
-                                    }, 
-                                    {key: 'B', answer: obj.incorrectAnswers[1], correct: false},
-                                    {key: 'C', answer: obj.incorrectAnswers[2], correct: false},
-                                    {key: 'D', answer: obj.correctAnswer, correct: true},
-                                    ]
-                            }
-                        ]
-        Arr.push(BigSet)
-        console.log(Arr) 
-    })
-    
-
-        /* Below causes an infinite loop to render after I map it*/
-    // setNewArr([...newArr, questions.map((obj)=> {
-    //     let BigSet = [
-    //                     {
-    //                         question: obj.question,
-    //                         answers: [{
-    //                             key: 'A', answer: obj.incorrectAnswers[0], correct: false
-    //                             }, 
-    //                             {key: 'B', answer: obj.incorrectAnswers[1], correct: false},
-    //                             {key: 'C', answer: obj.incorrectAnswers[2], correct: false},
-    //                             {key: 'D', answer: obj.correctAnswer, correct: true},
-    //                             ]
-    //                     }
-    //                 ]
-    //     return (
-    //         <div>
-    //             <h1>{BigSet[0].question}</h1>
-    //         </div>
-    //     )
-    // })])
-    console.log(questions)
-// questions = [
-//     {
-//         question: 'What is higher than 4',
-//         answers: [
-//             {key: 'A', choice: '4', correct: false},
-//             {key: 'B', choice: '5', correct: true},
-//         ]
-//     }
+    const q = [
+    {
+        question: questions[0],
+        // answers: [
+        //     {key: 'A', choice: questions[0].incorrectAnswers, correct: false},
+        //     {key: 'B', choice: questions[0].incorrectAnswers, correct: false},
+        //     {key: 'C', choice: questions[0].incorrectAnswers, correct: false},
+        //     {key: 'D', choice: questions[0].correctAnswer, correct: true},
+        // ]
+    },
+    // {
+    //     question: questions[1],
+    //     answers: [
+    //         {key: 'A', choice: questions[1].incorrectAnswers, correct: false},
+    //         {key: 'B', choice: questions[1].incorrectAnswers, correct: false},
+    //         {key: 'C', choice: questions[1].incorrectAnswers, correct: false},
+    //         {key: 'D', choice: questions[1].correctAnswer, correct: true},
+    //     ]
+    // },
+    // {
+    //     question: questions[2],
+    //     answers: [
+    //         {key: 'A', choice: questions[2].incorrectAnswers, correct: false},
+    //         {key: 'B', choice: questions[2].incorrectAnswers, correct: false},
+    //         {key: 'C', choice: questions[2].incorrectAnswers, correct: false},
+    //         {key: 'D', choice: questions[2].correctAnswer, correct: true},
+    //     ]
+    // },
+    // {
+    //     question: questions[3],
+    //     answers: [
+    //         {key: 'A', choice: questions[3].incorrectAnswers, correct: false},
+    //         {key: 'B', choice: questions[3].incorrectAnswers, correct: false},
+    //         {key: 'C', choice: questions[3].incorrectAnswers, correct: false},
+    //         {key: 'D', choice: questions[3].correctAnswer, correct: true},
+    //     ]
+    // },
+    // {
+    //     question: questions[4],
+    //     answers: [
+    //         {key: 'A', choice: questions[4].incorrectAnswers, correct: false},
+    //         {key: 'B', choice: questions[4].incorrectAnswers, correct: false},
+    //         {key: 'C', choice: questions[4].incorrectAnswers, correct: false},
+    //         {key: 'D', choice: questions[4].correctAnswer, correct: true},
+    //     ]
+    // }
+]
+const  [questionsNew, setQuestionsNew] = useState(q)
+setQuestionsNew([...questionsNew, {...questions}])
+console.log(q)
     return (
         <div>
-            <form onSubmit={(e) => { handleSubmit(e) }}>
-                {
-                    questions.map((obj) => {
-                        let Arr = []
-                        let BigSet = [
-                            {
-                                question: obj.question,
-                                answers: [{
-                                    key: 'A', answer: obj.incorrectAnswers[0], correct: false
-                                    }, 
-                                    {key: 'B', answer: obj.incorrectAnswers[1], correct: false},
-                                    {key: 'C', answer: obj.incorrectAnswers[2], correct: false},
-                                    {key: 'D', answer: obj.correctAnswer, correct: true},
-                                    ]
-                            }
-                        ]
-                        Arr.push(BigSet)
-                        
-                        let New = BigSet.sort(function () { return 0.5 - Math.random() })
-                        console.log(Arr[0][0])
-                        {/* console.log(New) */}
-                        
-                        {/* if(obj.correctAnswer === ) {
-                            console.log('correct')
-                        }else {
-                            console.log('wrong')
-                        } */}
-                        return (
-                            <>
-                                <h2>{obj.question}</h2>
-                                
-                                    <input id='a' type="radio" name={obj.id} value={New[0].answers.correct}/>
-                                    <label for="a">{New[0].answers.answer}</label>
-                                
-                                
-                                    <input id='b' type="radio" name={obj.id} value={New[1].answers.correct}/>
-                                    <label for="b">{New[1].answers.answer}</label>
-                                
-                                    <input id='c' type="radio" name={obj.id} value={New[2].answers.correct}/>
-                                    <label for="c">{New[2].answers.answer}</label>
-                                
-                                
-                                    <input id='d' type="radio" name={obj.id} value={New[3].answers.correct}/>
-                                    <label for="d">{New[3].answers.answer}</label>
-                             {/* <h2>{obj.question}</h2>
-                                
-                                    <input id='a' type="radio" name={obj.id} value={New[0].answers.correct}/>
-                                    <label for="a">{New[0].answers.answer}</label>
-                                
-                                
-                                    <input id='b' type="radio" name={obj.id} value={New[1].answers.correct}/>
-                                    <label for="b">{New[1].answers.answer}</label>
-                                
-                                    <input id='c' type="radio" name={obj.id} value={New[2].answers.correct}/>
-                                    <label for="c">{New[2].answers.answer}</label>
-                                
-                                
-                                    <input id='d' type="radio" name={obj.id} value={New[3].answers.correct}/>
-                                    <label for="d">{New[3].answers.answer}</label>
-                                
-
-                                 */}
-                            </>
-                        )
-                    })
-                }
-                <input type="submit" />
-            </form>
+        <h2>Game</h2>
+            {/* {
+                questionsNew.map((question) => {
+                    return(
+                        <div>
+                          <h2>{question.question}</h2>
+                          {
+                            question.answers.map((answer) => {
+                                return(
+                                    <div onClick={handleScoreUpdate}>
+                                      {answer.key}: {answer.choice}
+                                    </div>
+                                )
+                            })
+                          }
+                        </div>
+                    )
+                })
+            } */}
         </div>
     )
 }
