@@ -78,7 +78,7 @@ const Questions = ({ questions, setQuestions }) => {
                         Arr.push(BigSet)
                         
                         let New = BigSet.sort(function () { return 0.5 - Math.random() })
-                        console.log(Arr)
+                        console.log(Arr[0][0])
                         {/* console.log(New) */}
                         
                         {/* if(obj.correctAnswer === ) {
@@ -88,7 +88,21 @@ const Questions = ({ questions, setQuestions }) => {
                         } */}
                         return (
                             <>
+                                <h2>{obj.question}</h2>
                                 
+                                    <input id='a' type="radio" name={obj.id} value={New[0].answers.correct}/>
+                                    <label for="a">{New[0].answers.answer}</label>
+                                
+                                
+                                    <input id='b' type="radio" name={obj.id} value={New[1].answers.correct}/>
+                                    <label for="b">{New[1].answers.answer}</label>
+                                
+                                    <input id='c' type="radio" name={obj.id} value={New[2].answers.correct}/>
+                                    <label for="c">{New[2].answers.answer}</label>
+                                
+                                
+                                    <input id='d' type="radio" name={obj.id} value={New[3].answers.correct}/>
+                                    <label for="d">{New[3].answers.answer}</label>
                              {/* <h2>{obj.question}</h2>
                                 
                                     <input id='a' type="radio" name={obj.id} value={New[0].answers.correct}/>
