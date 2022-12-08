@@ -1,5 +1,6 @@
 body {
   background-color: whitesmoke;
+  font-family: sans-serif;
 }
 
 .header {
@@ -68,11 +69,25 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  font-size: 25px;
+}
+#img-cont{
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+}
+.bm-item-list img{
+  width: 60%;
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
+  text-decoration: none;
+}
+.bm-item-list a:hover{
+  color: goldenrod;
+  transition: 1s;
 }
 
 /* Styling of overlay */
@@ -182,10 +197,20 @@ button:hover {
 .decks {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding-top: 100px;
   overflow: hidden;
 }
-
+.gamecards :hover{
+  background-color: goldenrod;
+}
+.gamecards h1 {
+  background-color: transparent !important;
+}
+.gamecards h3 {
+  background-color: transparent !important;
+  
+}
 .decks div {
   display: flex;
   flex-direction: column;
@@ -195,6 +220,7 @@ button:hover {
   border-radius: .5rem;
   height: 20rem;
   width: 400px;
+  transition: 1s;
 }
 
 .decks div img {
@@ -211,7 +237,13 @@ button:hover {
   justify-self: center;
   align-self: center;
 }
-
+.decks div h3{
+  position: absolute;
+  z-index: 999;
+  font-size: 20px;
+  margin-top: 7%;
+  width: 150px;
+}
 .decks div p {
   position: fixed;
   max-width: 80%;
@@ -264,8 +296,13 @@ a {
 
 .quiz {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  justify-content: center;
   border-radius: 8rem;
-  padding: 10%;
+  padding: 10% 0;
   margin: auto;
+}
+
+form{
+  font-family: sans-serif;
 }

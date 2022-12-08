@@ -22,6 +22,7 @@ const Questions = ({ questions, setQuestions }) => {
                         questions.map((obj) => {
                             let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
                             AllChoices.sort(function () { return 0.5 - Math.random() })
+                            
                             const handleChange = (e) => {
                                 e.preventDefault()
                                 if (e.target.value === obj.correctAnswer) setScore(score + 1)
