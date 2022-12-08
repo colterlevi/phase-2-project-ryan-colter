@@ -1,95 +1,58 @@
 import { useState } from 'react'
 const Questions = ({ questions, setQuestions }) => {
     const [formPage, setFormPage] = useState('first')
-    const [newArr, setNewArr] = useState([])
-    setQuestions 
+    const [score, setScore] = useState(0)
+    const [formStep, setFormStep] = useState("quiz")
+    const [formData, setFormData] = useState({
+        score: null
+    })
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         // console.log("submitted")
-        // let req = await fetch('url', { method: 'PATCH' })
+        // let req = await fetch('http://localhost:3000/users', { method: 'PATCH' })
     }
 
-    
-// questions = [
-//     {
-//         question: 'What is higher than 4',
-//         answers: [
-//             {key: 'A', choice: '4', correct: false},
-//             {key: 'B', choice: '5', correct: true},
-//         ]
-//     }
     return (
-        <div>
+        <div className='quiz'>
             <form onSubmit={(e) => { handleSubmit(e) }}>
-                {
-                    questions.map((obj) => {
-                        {/* let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
-                        AllChoices.sort(function () { return 0.5 - Math.random() }) */}
-                        let AllChoices = [
-                            {answer: obj.incorrectAnswers[0],
-                            correct: false},
-                            {answer: obj.incorrectAnswers[1],
-                            correct: false},
-                            {answer: obj.incorrectAnswers[2],
-                            correct: false},
-                            {answer: obj.correctAnswer,
-                            correct: true},
-                        ]
-                        
-                        let New = AllChoices.sort(function () { return 0.5 - Math.random() })
+                {formStep === "quiz" && <div>
+                    {
+                        questions.map((obj) => {
+                            let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
+                            AllChoices.sort(function () { return 0.5 - Math.random() })
+                            const handleChange = (e) => {
+                                e.preventDefault()
+                                if (e.target.value === obj.correctAnswer) setScore(score + 1)
+                            }
 
-                        console.log(New[0])
-                        console.log(New.correct)
-                        
-                        {/* if(obj.correctAnswer === ) {
-                            console.log('correct')
-                        }else {
-                            console.log('wrong')
-                        } */}
-                        return (
-                            <>
-
-                             <h2>{obj.question}</h2>
-                                
-                                    <input id='a' type="radio" name={obj.id} value={New[0].correct}/>
-                                    <label for="a">{New[0].answer}</label>
-                                
-                                
-                                    <input id='b' type="radio" name={obj.id} value={New[1].correct}/>
-                                    <label for="b">{New[1].answer}</label>
-                                
-                                    <input id='c' type="radio" name={obj.id} value={New[2].correct}/>
-                                    <label for="c">{New[2].answer}</label>
-                                
-                                
-                                    <input id='d' type="radio" name={obj.id} value={New[3].correct}/>
-                                    <label for="d">{New[3].answer}</label>
-                                
-
-                                {/* <h2>{obj.question}</h2>
+                            console.log(score)
+                            return (
                                 <div>
-                                    <input id='a' type="radio" name={obj.id} />
+                                    <h2>{obj.question}</h2>
+                                    <input onChange={handleChange} id='a' type="radio" name={obj.id} value={AllChoices[0]} />
                                     <label for="a">{AllChoices[0]}</label>
-                                </div>
-                                <div>
-                                    <input id='b' type="radio" name={obj.id} />
+                                    <input onChange={handleChange} id='b' type="radio" name={obj.id} value={AllChoices[1]} />
                                     <label for="b">{AllChoices[1]}</label>
-                                </div>
-                                <div>
-                                    <input id='c' type="radio" name={obj.id} />
+                                    <input onChange={handleChange} id='c' type="radio" name={obj.id} value={AllChoices[2]} />
                                     <label for="c">{AllChoices[2]}</label>
-                                </div>
-                                <div>
-                                    <input id='d' type="radio" name={obj.id} />
+                                    <input onChange={handleChange} id='d' type="radio" name={obj.id} value={AllChoices[3]} />
                                     <label for="d">{AllChoices[3]}</label>
-                                </div> */}
-                            </>
-                        )
-                    })
+                                </div>
+                            )
+                        })
+
+                    }
+                    <br />
+                    <button className="quiz-btn" onClick={() => { setFormStep("score") }}>See Your Score</button>
+                </div>}
+                {formStep === "score" && <div>
+                    <h2>Score!</h2>
+                    <input className="quiz-input" type='text' placeholder='enter your score' value={formData.score} name='score' onChange={e => handleChange(e)} ></input>
+                    <input className="quiz-btn" type="submit" />
+                </div>
                 }
-                <input type="submit" />
             </form>
         </div>
     )
