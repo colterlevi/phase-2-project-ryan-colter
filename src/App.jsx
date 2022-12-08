@@ -30,7 +30,7 @@ const App = () => {
     }
     request()
   },[setUsers])
-  console.log(currentUser)  
+  console.log(users)  
   
   useEffect(() => {
     const request = async () => {
