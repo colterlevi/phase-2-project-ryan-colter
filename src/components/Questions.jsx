@@ -7,8 +7,6 @@ const Questions = ({ questions, setQuestions }) => {
         score: null
     })
 
-    
-
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -16,40 +14,38 @@ const Questions = ({ questions, setQuestions }) => {
         // let req = await fetch('http://localhost:3000/users', { method: 'PATCH' })
     }
 
-  
     return (
         <div className='quiz'>
             <form onSubmit={(e) => { handleSubmit(e) }}>
-        { formStep === "quiz" && <div>
-                {
-                    questions.map((obj) => {
-                        let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
-                        AllChoices.sort(function () { return 0.5 - Math.random() })
-                        const handleChange = (e) => {
-                            e.preventDefault()
-                            if (e.target.value === obj.correctAnswer) setScore(score + 1)
-                        }
-                        
-                        console.log(score)
-                        return (
-                            <div>
-                                <h2>{obj.question}</h2>
-                                <input onChange={handleChange} id='a' type="radio" name={obj.id} value={AllChoices[0]}/>
-                                <label for="a">{AllChoices[0]}</label>
-                                <input onChange={handleChange} id='b' type="radio" name={obj.id} value={AllChoices[1]}/>
-                                <label for="b">{AllChoices[1]}</label>
-                                <input onChange={handleChange} id='c' type="radio" name={obj.id} value={AllChoices[2]}/>
-                                <label for="c">{AllChoices[2]}</label>
-                                <input onChange={handleChange} id='d' type="radio" name={obj.id} value={AllChoices[3]}/>
-                                <label for="d">{AllChoices[3]}</label>
-                            </div>
-                      
-                        )
-                    })
-                
-                }
-                <br />
-                <button className="quiz-btn" onClick={() => { setFormStep("score") }}>See Your Score</button>
+                {formStep === "quiz" && <div>
+                    {
+                        questions.map((obj) => {
+                            let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
+                            AllChoices.sort(function () { return 0.5 - Math.random() })
+                            const handleChange = (e) => {
+                                e.preventDefault()
+                                if (e.target.value === obj.correctAnswer) setScore(score + 1)
+                            }
+
+                            console.log(score)
+                            return (
+                                <div>
+                                    <h2>{obj.question}</h2>
+                                    <input onChange={handleChange} id='a' type="radio" name={obj.id} value={AllChoices[0]} />
+                                    <label for="a">{AllChoices[0]}</label>
+                                    <input onChange={handleChange} id='b' type="radio" name={obj.id} value={AllChoices[1]} />
+                                    <label for="b">{AllChoices[1]}</label>
+                                    <input onChange={handleChange} id='c' type="radio" name={obj.id} value={AllChoices[2]} />
+                                    <label for="c">{AllChoices[2]}</label>
+                                    <input onChange={handleChange} id='d' type="radio" name={obj.id} value={AllChoices[3]} />
+                                    <label for="d">{AllChoices[3]}</label>
+                                </div>
+                            )
+                        })
+
+                    }
+                    <br />
+                    <button className="quiz-btn" onClick={() => { setFormStep("score") }}>See Your Score</button>
                 </div>}
                 {formStep === "score" && <div>
                     <h2>Score!</h2>
