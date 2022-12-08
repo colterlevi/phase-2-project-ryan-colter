@@ -21,10 +21,6 @@ const Questions = ({ questions, setQuestions }) => {
         // let req = await fetch('http://localhost:3000/users', { method: 'PATCH' })
     }
 
-    function handleChange(e) {
-        setFormData({ ...formData, [e.target.name]: e.target.value })
-    }
-
     return (
         <div className='quiz'>
             <form onSubmit={(e) => { handleSubmit(e) }}>
@@ -35,8 +31,7 @@ const Questions = ({ questions, setQuestions }) => {
                         AllChoices.sort(function () { return 0.5 - Math.random() })
                         const handleChange = (e) => {
                             e.preventDefault()
-                            if (e.target.value === obj.correctAnswer) setScore(score + 1) 
-                            else return;
+                            if (e.target.value === obj.correctAnswer) setScore(score + 1)
                         }
                         
                         console.log(score)
