@@ -47,7 +47,7 @@ const App = () => {
         <Header currentUser={currentUser} loggedIn={loggedIn} setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>      
         <Routes>
         <Route path="/" element={<Decks category={category} setCategory={setCategory} />} />
-        <Route path="/game" element={<Questions questions={questions} setQuestions={setQuestions} category={category} setCategory={setCategory} />} />
+        <Route path="/game" element={<Questions currentUser={currentUser} questions={questions} />} />
           <Route path="/login" element={<Login users={users} setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/leaderboard" element={<Leaderboard />} />

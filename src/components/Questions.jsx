@@ -20,7 +20,7 @@ const Questions = ({ questions, currentUser }) => {
                     score: currentUser.score + score,
                 })
             })
-            let res = req.json()
+            let res = await req.json()
             console.log(res)
         }
         postScore()
