@@ -1,11 +1,18 @@
 import { useState } from 'react'
 const Questions = ({ questions, setQuestions }) => {
     const [formPage, setFormPage] = useState('first')
-    const [newArr, setNewArr] = useState([])
+    const [score, setScore] = useState(0)
     const [formStep, setFormStep] = useState("quiz")
     const [formData, setFormData] = useState({
         score: null
     })
+
+    // const incorrectAnswers = questions.map((a) => a.incorrectAnswers)
+    // const correctAnswer = questions.map((a) => a.correctAnswer)
+
+    // setNewArr([...incorrectAnswers, correctAnswer])
+
+    // console.log(newArr)
 
 
     const handleSubmit = async (e) => {
@@ -26,21 +33,28 @@ const Questions = ({ questions, setQuestions }) => {
                     questions.map((obj) => {
                         let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
                         AllChoices.sort(function () { return 0.5 - Math.random() })
-                        // console.log(AllChoices)
+                        const handleChange = (e) => {
+                            e.preventDefault()
+                            if (e.target.value === obj.correctAnswer) setScore(score + 1) 
+                            else return;
+                        }
+                        
+                        console.log(score)
                         return (
-                            <>
+                            <div>
                                 <h2>{obj.question}</h2>
-                                <input id='a' type="radio" name={obj.id} />
+                                <input onChange={handleChange} id='a' type="radio" name={obj.id} value={AllChoices[0]}/>
                                 <label for="a">{AllChoices[0]}</label>
-                                <input id='b' type="radio" name={obj.id} />
+                                <input onChange={handleChange} id='b' type="radio" name={obj.id} value={AllChoices[1]}/>
                                 <label for="b">{AllChoices[1]}</label>
-                                <input id='c' type="radio" name={obj.id} />
+                                <input onChange={handleChange} id='c' type="radio" name={obj.id} value={AllChoices[2]}/>
                                 <label for="c">{AllChoices[2]}</label>
-                                <input id='d' type="radio" name={obj.id} />
+                                <input onChange={handleChange} id='d' type="radio" name={obj.id} value={AllChoices[3]}/>
                                 <label for="d">{AllChoices[3]}</label>
-                            </>
+                            </div>
                         )
                     })
+                
                 }
                 <br />
                 <button className="quiz-btn" onClick={() => { setFormStep("score") }}>See Your Score</button>

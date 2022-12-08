@@ -30,7 +30,6 @@ const App = () => {
     }
     request()
   },[setUsers])
-  console.log(currentUser)  
   
   useEffect(() => {
     const request = async () => {
@@ -40,7 +39,8 @@ const App = () => {
     }
     request()
   },[category])
-
+  console.log(questions)  
+  
   return (
       <BrowserRouter>
         <HamburgerMenu />
