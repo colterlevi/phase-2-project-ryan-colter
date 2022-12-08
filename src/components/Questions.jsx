@@ -1,23 +1,34 @@
 import { useState } from 'react'
-const Questions = ({ questions, setQuestions }) => {
+
+const Questions = ({ questions, currentUser }) => {
     const [formPage, setFormPage] = useState('first')
     const [score, setScore] = useState(0)
     const [formStep, setFormStep] = useState("quiz")
-    const [formData, setFormData] = useState({
-        score: null
-    })
 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         // console.log("submitted")
-        // let req = await fetch('http://localhost:3000/users', { method: 'PATCH' })
+        const postScore  = async () => {
+        let req = await fetch(`http://localhost:3000/users/${currentUser.id}`, { method: 'PATCH',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                score: score,
+            })
+        })
+        let res = req.json()
+        console.log(res)
     }
+    postScore()
+}   
 
     return (
         <div className='quiz'>
             <form onSubmit={(e) => { handleSubmit(e) }}>
-                {formStep === "quiz" && <div>
+                {/* {formStep === "quiz" && <div> */}
                     {
                         questions.map((obj) => {
                             let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
@@ -45,17 +56,18 @@ const Questions = ({ questions, setQuestions }) => {
 
                     }
                     <br />
-                    <button className="quiz-btn" onClick={() => { setFormStep("score") }}>See Your Score</button>
-                </div>}
-                {formStep === "score" && <div>
+                    <input className="quiz-btn" type="submit" />
+                    {/* <button className="quiz-btn" onClick={() => { setFormStep("score") }}>See Your Score</button> */}
+                {/* </div>} */}
+                {/* {formStep === "score" &&
+                <div>
                     <h2>Score!</h2>
                     <input className="quiz-input" type='text' placeholder='enter your score' value={formData.score} name='score' onChange={e => handleChange(e)} ></input>
-                    <input className="quiz-btn" type="submit" />
                 </div>
-                }
+                */}
             </form>
         </div>
     )
 }
 
-export default Questions 
+export default Questions
