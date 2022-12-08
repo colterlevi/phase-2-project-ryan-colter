@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 import { slide as Menu } from 'react-burger-menu'
 
-// const StyledLink = styled(Link)`
-//     text-decoration: none;
-
-//     &:focus, &:hover, &:visited, &:link, &:active {
-//         text-decoration: none;
-//     }
-// `;
-
 const HamburgerMenu = () => {
     return (
         <Menu>
