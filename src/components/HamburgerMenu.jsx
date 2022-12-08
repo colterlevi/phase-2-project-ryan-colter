@@ -4,6 +4,9 @@ import { slide as Menu } from 'react-burger-menu'
 const HamburgerMenu = () => {
     return (
         <Menu>
+            <div id='img-cont'>
+                <img src="src/assets/24-Crowns.svg" alt="Trivia Masters Crown" />
+            </div>
             <Link to="/">
                 <h3>Home</h3>
             </Link>
