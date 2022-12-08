@@ -4,7 +4,6 @@ body {
 }
 
 .header {
-  position: fixed;
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -299,7 +298,7 @@ a {
   width: 100%;
   justify-content: center;
   border-radius: 8rem;
-  padding: 10% 0;
+  padding: 5% 0;
   margin: auto;
 }
 
