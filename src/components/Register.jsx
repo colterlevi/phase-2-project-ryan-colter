@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Register = ({ user, setUser }) => {
+const Register = () => {
     const [usernameInput, setUsernameInput] = useState('')
     const [passwordInput, setPasswordInput] = useState('')
     const handleSubmit = async (e) => {
