@@ -1,12 +1,9 @@
 import { Titles } from '../../Titles'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-// const classNames = require("classnames")
 
-const Decks = ({ setCategory, category }) => {
+const Decks = ({ setCategory }) => {
     const [deck, setDeck] = useState(Titles)
-    // console.log(category)
-    // console.log(Titles)
     return (
         <div className="decks">
             {
