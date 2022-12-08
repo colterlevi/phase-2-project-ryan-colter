@@ -1,9 +1,7 @@
 import { useState } from 'react'
 
 const Questions = ({ questions, currentUser }) => {
-    const [formPage, setFormPage] = useState('first')
     const [score, setScore] = useState(0)
-    const [formStep, setFormStep] = useState("quiz")
 
 
     const handleSubmit = (e) => {
@@ -29,7 +27,6 @@ const Questions = ({ questions, currentUser }) => {
     return (
         <div className='quiz'>
             <form onSubmit={(e) => { handleSubmit(e) }}>
-                {/* {formStep === "quiz" && <div> */}
                 {
                     questions.map((obj) => {
                         let AllChoices = [...obj.incorrectAnswers, obj.correctAnswer]
@@ -58,14 +55,6 @@ const Questions = ({ questions, currentUser }) => {
                 }
                 <br />
                 <input className="quiz-btn" type="submit" />
-                {/* <button className="quiz-btn" onClick={() => { setFormStep("score") }}>See Your Score</button> */}
-                {/* </div>} */}
-                {/* {formStep === "score" &&
-                <div>
-                    <h2>Score!</h2>
-                    <input className="quiz-input" type='text' placeholder='enter your score' value={formData.score} name='score' onChange={e => handleChange(e)} ></input>
-                </div>
-                */}
             </form>
         </div>
     )
