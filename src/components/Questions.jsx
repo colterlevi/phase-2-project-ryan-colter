@@ -7,12 +7,7 @@ const Questions = ({ questions, setQuestions }) => {
         score: null
     })
 
-    // const incorrectAnswers = questions.map((a) => a.incorrectAnswers)
-    // const correctAnswer = questions.map((a) => a.correctAnswer)
-
-    // setNewArr([...incorrectAnswers, correctAnswer])
-
-    // console.log(newArr)
+    
 
 
     const handleSubmit = async (e) => {
@@ -21,6 +16,7 @@ const Questions = ({ questions, setQuestions }) => {
         // let req = await fetch('http://localhost:3000/users', { method: 'PATCH' })
     }
 
+  
     return (
         <div className='quiz'>
             <form onSubmit={(e) => { handleSubmit(e) }}>
@@ -47,6 +43,7 @@ const Questions = ({ questions, setQuestions }) => {
                                 <input onChange={handleChange} id='d' type="radio" name={obj.id} value={AllChoices[3]}/>
                                 <label for="d">{AllChoices[3]}</label>
                             </div>
+                      
                         )
                     })
                 
