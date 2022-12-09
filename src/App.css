@@ -89,7 +89,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .bm-item-list a:hover {
   color: goldenrod;
-  transition: 1s;
+  transition: 0.7s;
+  transform: scale(1.1);
+  transition-timing-function: ease-out;
 }
 
 /* Styling of overlay */
@@ -225,7 +227,7 @@ button:hover {
   border-radius: .5rem;
   height: 20rem;
   width: 400px;
-  transition: 1s;
+  transition: 0.7s;
 }
 
 .decks div img {
